@@ -4,7 +4,7 @@ class Geocoder < BaseService
   end
 
   def coords
-    get_json("maps/api/geocode/json")
+    get_json("maps/api/geocode/json")[:results][0][:geometry][:location]
   end
 
   private
