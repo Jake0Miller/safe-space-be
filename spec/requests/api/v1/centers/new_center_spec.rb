@@ -12,7 +12,7 @@ describe 'POST /api/v1/centers' do
 
     expect(Center.count).to eq(0)
 
-    request_body = { "address": "1331 17th St, Denver, CO 80202",
+    request_body = { "address": "1331 17th St Denver CO 80202",
                      "phone": "5555555555",
                      "website": "www.relief-center.com",
                      "email": "get-relief@this-center.com", }

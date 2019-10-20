@@ -1,7 +1,8 @@
 class Api::V1::CentersController < ApplicationController
   def create
-    Center.create!(center_params)
+    # Center.create!(center_params)
     binding.pry
+    Geocoder.new(params[:address]).coords
   end
 
   private
