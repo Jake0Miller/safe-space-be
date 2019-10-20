@@ -13,6 +13,10 @@ class Api::V1::CentersController < ApplicationController
     end
   end
 
+  def index
+    render json: Center.all
+  end
+
   private
 
   def center_params
