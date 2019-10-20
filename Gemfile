@@ -14,6 +14,7 @@ gem 'figaro'
 gem 'webmock'
 gem 'faraday'
 gem 'fast_jsonapi'
+gem 'active_model_serializers'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
