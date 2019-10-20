@@ -1,6 +1,6 @@
 class Api::V1::CentersController < ApplicationController
   def create
-    if fields_missing? || fields_empty?
+    if fields_empty? || fields_missing?
       render json: {Error: 'You have missing fields!'}, status: 400
     else
       coords = Geocoder.new(params[:address]).coords
