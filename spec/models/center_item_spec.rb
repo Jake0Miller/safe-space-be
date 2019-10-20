@@ -6,6 +6,7 @@ RSpec.describe CenterItem, type: :model do
   end
 
   describe 'Relationships' do
-    # it {should have_one :image}
+    it {should belong_to :center}
+    it {should belong_to :item}
   end
 end

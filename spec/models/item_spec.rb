@@ -6,6 +6,7 @@ RSpec.describe Item, type: :model do
   end
 
   describe 'Relationships' do
-    # it {should have_one :image}
+    it {should have_many :center_items}
+    it {should have_many(:centers).through(:center_items)}
   end
 end
