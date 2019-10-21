@@ -35,4 +35,6 @@ figaro install
 
 Add api keys and env variables to config/application.yml
 
+rails db:{create,migrate}
+
 rails s
