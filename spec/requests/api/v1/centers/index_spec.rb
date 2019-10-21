@@ -7,7 +7,7 @@ describe 'GET /api/v1/centers' do
     expect(@centers.length).to eq(5)
   end
 
-  it 'I can get all new centers' do
+  it 'I can get all centers' do
     get '/api/v1/centers'
 
     centers = JSON.parse(response.body, symbolize_names: true)
