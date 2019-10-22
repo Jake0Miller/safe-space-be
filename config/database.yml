@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: cross-pol-be_production
-  username: cross-pol-be
-  password: <%= ENV['CROSS-POL-BE_DATABASE_PASSWORD'] %>
+  database: safe-space-be_production
+  username: safe-space-be
+  password: <%= ENV['SAFE-SPACE-BE_DATABASE_PASSWORD'] %>
