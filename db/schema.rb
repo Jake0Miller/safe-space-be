@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_10_20_233722) do
   enable_extension "plpgsql"
 
   create_table "center_items", force: :cascade do |t|
-    t.integer "quantity"
+    t.integer "quantity", default: 0
     t.bigint "item_id"
     t.bigint "center_id"
     t.datetime "created_at", null: false
