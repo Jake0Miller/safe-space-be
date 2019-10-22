@@ -1,8 +1,8 @@
 # Production & Codebase
 
-[Front end GitHub](https://github.com/CervAnn/cross-poll-fe)
+[Front end GitHub](https://github.com/CervAnn/safe-space-fe)
 
-[Back end GitHub](https://github.com/Jake0Miller/lance-be)
+[Back end GitHub](https://github.com/Jake0Miller/safe-space-be)
 
 # README
 
