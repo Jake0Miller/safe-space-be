@@ -24,6 +24,10 @@ describe 'GET items' do
               items {
                 id
                 name
+                centers {
+                  id
+                  addressPrint
+                }
               }
             }" }
     post '/graphql', params: query
@@ -35,6 +39,7 @@ describe 'GET items' do
     items.each_with_index do |item,i|
       expect(item[:id]).to eq(@items[i].id.to_s)
       expect(item[:name]).to eq(@items[i].name)
+      expect(item[:centers].first[:id]).to eq(@items[i].centers.first.id.to_s)
     end
   end
 end
