@@ -1,13 +1,11 @@
 require 'rails_helper'
 
 describe 'GET /api/v1/items' do
-  before :each do
-    FactoryBot.create_list(:item, 5)
-    @items = Item.all
-    expect(@items.length).to eq(5)
-  end
-
   it 'I can get all items' do
+    FactoryBot.create_list(:item, 5)
+    items = Item.all
+    expect(items.length).to eq(5)
+
     get '/api/v1/items'
 
     items = JSON.parse(response.body, symbolize_names: true)
