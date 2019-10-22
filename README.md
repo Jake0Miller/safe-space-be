@@ -1,5 +1,7 @@
 # Production & Codebase
 
+[Project Board](https://github.com/ktsune/safe-space-fe)
+
 [Front end GitHub](https://github.com/CervAnn/safe-space-fe)
 
 [Back end GitHub](https://github.com/Jake0Miller/safe-space-be)
