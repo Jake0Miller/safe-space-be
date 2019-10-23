@@ -16,6 +16,7 @@ describe 'GET /api/v1/centers' do
     expect(centers.length).to eq(5)
 
     keys = centers.first.keys
+    expect(keys).to include(:name)
     expect(keys).to include(:address)
     expect(keys).to include(:phone)
     expect(keys).to include(:lat)

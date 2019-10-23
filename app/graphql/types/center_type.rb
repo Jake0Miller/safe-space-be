@@ -1,6 +1,7 @@
 module Types
   class CenterType < Types::BaseObject
     field :id, ID, null: false
+    field :name, String, null: false
     field :address, String, null: false
     field :email, String, null: false
     field :website, String, null: false

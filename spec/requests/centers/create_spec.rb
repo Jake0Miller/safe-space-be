@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'POST /api/v1/centers' do
+describe 'POST center' do
   before :each do
     stub_json("https://maps.googleapis.com/maps/api/geocode/json?address=1331,17th,St,Denver,CO,80202&key=#{ENV['GEO_KEY']}",
       "./fixtures/turing_location.json")
@@ -10,6 +10,7 @@ describe 'POST /api/v1/centers' do
   it 'I can create a new center' do
     mutation = %(mutation {
                   createCenter (
+                      name: "Turing Relief Center",
                       address: "1331,17th,St,Denver,CO,80202",
                       phone: "921",
                       website: "https",

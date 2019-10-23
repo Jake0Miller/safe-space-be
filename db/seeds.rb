@@ -12,19 +12,29 @@ if Rails.env.production? || Rails.env.development?
   water = Item.create!(name: "Water")
   soap = Item.create!(name: "Soap")
 
-  center_1 = Center.create!({ "address": "1331,17th,St,Denver,CO,80202",
+  center_1 = Center.create!({ "name": "Turing Relief Center",
+                   "address": "1331,17th,St,Denver,CO,80202",
                    "phone": "5555555555",
                    "website": "www.relief-center.com",
                    "email": "get-relief@this-center.com",
                    "lat": "39.7508132",
                    "lng": "-104.9967997" })
 
- center_2 = Center.create!({ "address": "601,W,11th,Ave,Denver,CO,80204",
+ center_2 = Center.create!({ "name": "Central Denver Disaster Relief",
+                  "address": "601,W,11th,Ave,Denver,CO,80204",
                   "phone": "5555555555",
                   "website": "www.safe-space.com",
                   "email": "get-relief@that-center.com",
-                  "lat": "39.7008132",
-                  "lng": "-104.9997997" })
+                  "lat": "39.7341653",
+                  "lng": "-104.9974374" })
+
+  center_3 = Center.create!({ "name": "Capitol Square Relief",
+                 "address": "200,E,Colfax,Ave,Denver,CO,80203",
+                 "phone": "5555555555",
+                 "website": "www.denver-capitol.com",
+                 "email": "get-relief@capitol-center.com",
+                 "lat": "39.7341653",
+                 "lng": "-104.9869956" })
 
   CenterItem.create!(item: diapers, center: center_1, quantity: 5)
   CenterItem.create!(item: diapers, center: center_2, quantity: 4)
@@ -33,4 +43,5 @@ if Rails.env.production? || Rails.env.development?
   CenterItem.create!(item: water, center: center_1, quantity: 10)
   CenterItem.create!(item: water, center: center_2, quantity: 12)
   CenterItem.create!(item: soap, center: center_1)
+  CenterItem.create!(item: soap, center: center_3, quantity: 1)
 end

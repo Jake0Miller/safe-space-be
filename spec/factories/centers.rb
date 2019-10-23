@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :center do
+    name  { Faker::Company.name }
     address  { Faker::Address.full_address }
     lat  { Faker::Address.latitude }
     lng  { Faker::Address.longitude }

@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_10_20_233722) do
   end
 
   create_table "centers", force: :cascade do |t|
+    t.string "name"
     t.string "address"
     t.string "lat"
     t.string "lng"

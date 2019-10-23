@@ -1,5 +1,6 @@
 module Mutations
   class CreateCenterMutation < Mutations::BaseMutation
+    argument :name, String, required: true
     argument :address, String, required: true
     argument :phone, String, required: true
     argument :website, String, required: true
