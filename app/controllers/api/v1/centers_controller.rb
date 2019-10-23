@@ -20,7 +20,7 @@ class Api::V1::CentersController < ApplicationController
   private
 
   def center_params
-    params.require(:center).permit(:address, :phone, :website, :email)
+    params.require(:center).permit(:name, :address, :phone, :website, :email)
   end
 
   def fields_empty?

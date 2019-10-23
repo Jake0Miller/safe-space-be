@@ -10,6 +10,7 @@ describe 'POST center' do
   it 'I can create a new center' do
     mutation = %(mutation {
                   createCenter (
+                      name: "Turing Relief Center",
                       address: "1331,17th,St,Denver,CO,80202",
                       phone: "921",
                       website: "https",

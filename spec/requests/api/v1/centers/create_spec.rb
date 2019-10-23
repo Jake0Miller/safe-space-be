@@ -12,7 +12,8 @@ describe 'POST /api/v1/centers' do
   end
 
   it 'I can create a new center' do
-    request_body = { "address": "1331,17th,St,Denver,CO,80202",
+    request_body = { "name": "Relief",
+                     "address": "1331,17th,St,Denver,CO,80202",
                      "phone": "5555555555",
                      "website": "www.relief-center.com",
                      "email": "get-relief@this-center.com", }
