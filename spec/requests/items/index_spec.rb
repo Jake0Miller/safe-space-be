@@ -19,7 +19,7 @@ describe 'GET items' do
     expect(CenterItem.count).to eq(7)
   end
 
-  it 'I can get all centers' do
+  it 'I can get all titems and their centers' do
     query = { "query" => "{
               items {
                 id
