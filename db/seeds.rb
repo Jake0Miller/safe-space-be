@@ -19,8 +19,18 @@ if Rails.env.production? || Rails.env.development?
                    "lat": "39.7508132",
                    "lng": "-104.9967997" })
 
+ center_2 = Center.create!({ "address": "601,W,11th,Ave,Denver,CO,80204",
+                  "phone": "5555555555",
+                  "website": "www.safe-space.com",
+                  "email": "get-relief@that-center.com",
+                  "lat": "39.7008132",
+                  "lng": "-104.9997997" })
+
   CenterItem.create!(item: diapers, center: center_1, quantity: 5)
+  CenterItem.create!(item: diapers, center: center_2, quantity: 4)
   CenterItem.create!(item: food, center: center_1, quantity: 4)
+  CenterItem.create!(item: food, center: center_2, quantity: 5)
   CenterItem.create!(item: water, center: center_1, quantity: 10)
+  CenterItem.create!(item: water, center: center_2, quantity: 12)
   CenterItem.create!(item: soap, center: center_1)
 end

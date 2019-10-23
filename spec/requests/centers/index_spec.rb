@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'GET items' do
+describe 'GET /api/v1/centers' do
   before :each do
     FactoryBot.create_list(:item, 5)
     @items = Item.all
@@ -19,27 +19,32 @@ describe 'GET items' do
     expect(CenterItem.count).to eq(7)
   end
 
-  it 'I can get all titems and their centers' do
+  it 'I can get all centers and their items' do
     query = { "query" => "{
-              items {
+              centers {
                 id
-                name
-                centers {
+                address
+                phone
+                email
+                website
+                lat
+                lng
+                items {
                   id
-                  addressPrint
+                  name
                 }
               }
             }" }
     post '/graphql', params: query
 
-    items = JSON.parse(response.body, symbolize_names: true)[:data][:items]
+    centers = JSON.parse(response.body, symbolize_names: true)[:data][:centers]
 
     expect(response.status).to eq(200)
-    expect(items.length).to eq(5)
-    items.each_with_index do |item,i|
-      expect(item[:id]).to eq(@items[i].id.to_s)
-      expect(item[:name]).to eq(@items[i].name)
-      expect(item[:centers].first[:id]).to eq(@items[i].centers.first.id.to_s)
+    expect(centers.length).to eq(2)
+    centers.each_with_index do |center,i|
+      expect(center[:id]).to eq(@centers[i].id.to_s)
+      expect(center[:address]).to eq(@centers[i].address)
+      expect(center[:items].first[:id]).to eq(@centers[i].items.first.id.to_s)
     end
   end
 end
