@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'GET /api/v1/centers' do
+describe 'GET centers' do
   before :each do
     FactoryBot.create_list(:item, 5)
     @items = Item.all

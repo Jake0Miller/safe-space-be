@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'POST /api/v1/centers' do
+describe 'POST center' do
   before :each do
     stub_json("https://maps.googleapis.com/maps/api/geocode/json?address=1331,17th,St,Denver,CO,80202&key=#{ENV['GEO_KEY']}",
       "./fixtures/turing_location.json")
