@@ -12,14 +12,16 @@ if Rails.env.production? || Rails.env.development?
   water = Item.create!(name: "Water")
   soap = Item.create!(name: "Soap")
 
-  center_1 = Center.create!({ "address": "1331,17th,St,Denver,CO,80202",
+  center_1 = Center.create!({ "name": "Turing Relief Center",
+                   "address": "1331,17th,St,Denver,CO,80202",
                    "phone": "5555555555",
                    "website": "www.relief-center.com",
                    "email": "get-relief@this-center.com",
                    "lat": "39.7508132",
                    "lng": "-104.9967997" })
 
- center_2 = Center.create!({ "address": "601,W,11th,Ave,Denver,CO,80204",
+ center_2 = Center.create!({ "name": "Central Denver Disaster Relief",
+                  "address": "601,W,11th,Ave,Denver,CO,80204",
                   "phone": "5555555555",
                   "website": "www.safe-space.com",
                   "email": "get-relief@that-center.com",
