@@ -3,4 +3,5 @@ class Center < ApplicationRecord
                         :phone, :email, :website
   has_many :center_items
   has_many :items, through: :center_items
+  has_many :users
 end
