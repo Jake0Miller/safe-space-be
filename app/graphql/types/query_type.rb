@@ -17,5 +17,14 @@ module Types
     def centers
       Center.all
     end
+
+    field :users,
+      [Types::UserType],
+      null: false,
+      description: "Returns all users in the database"
+
+    def users
+      User.all
+    end
   end
 end
