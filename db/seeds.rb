@@ -36,6 +36,12 @@ if Rails.env.production? || Rails.env.development?
                  "lat": "39.7341653",
                  "lng": "-104.9869956" })
 
+  user_1 = User.create(name: 'Jake', center: center_1)
+  user_2 = User.create(name: 'Jacob', center: center_1)
+  user_3 = User.create(name: 'Sarah', center: center_2)
+  user_4 = User.create(name: 'Ann', center: center_2)
+  user_5 = User.create(name: 'Pam', center: center_2)
+
   CenterItem.create!(item: diapers, center: center_1, quantity: 5)
   CenterItem.create!(item: diapers, center: center_2, quantity: 4)
   CenterItem.create!(item: food, center: center_1, quantity: 4)
