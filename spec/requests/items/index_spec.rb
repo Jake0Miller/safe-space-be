@@ -30,16 +30,35 @@ describe 'GET items' do
                 }
               }
             }" }
+
     post '/graphql', params: query
 
     items = JSON.parse(response.body, symbolize_names: true)[:data][:items]
 
-    expect(response.status).to eq(200)
     expect(items.length).to eq(5)
     items.each_with_index do |item,i|
       expect(item[:id]).to eq(@items[i].id.to_s)
       expect(item[:name]).to eq(@items[i].name)
       expect(item[:centers].first[:id]).to eq(@items[i].centers.first.id.to_s)
+    end
+  end
+
+  it 'I can get all items for a specific center' do
+    query = { "query" => "{
+              itemsAtCenter(centerId: #{@center_1.id}) {
+                id
+                name
+              }
+            }" }
+
+    post '/graphql', params: query
+
+    items = JSON.parse(response.body, symbolize_names: true)[:data][:items]
+
+    expect(items.length).to eq(3)
+    items.each_with_index do |item,i|
+      expect(item[:id]).to eq(@items[i].id.to_s)
+      expect(item[:name]).to eq(@items[i].name)
     end
   end
 end
