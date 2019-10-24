@@ -6,6 +6,16 @@ module Types
       Item.all
     end
 
+    field :items_at_center, [Types::ItemType], null: false do
+      argument :center_id, Integer, required: false
+    end
+
+    def items_at_center(center_id:)
+      Item.joins(:centers)
+        .select('items.*, center_items.quantity')
+        .where(centers: {id: center_id})
+    end
+
     field :centers, [Types::CenterType], null: false
 
     def centers
