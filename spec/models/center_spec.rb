@@ -14,5 +14,6 @@ RSpec.describe Center, type: :model do
   describe 'Relationships' do
     it {should have_many :center_items}
     it {should have_many(:items).through(:center_items)}
+    it {should have_many :users}
   end
 end
