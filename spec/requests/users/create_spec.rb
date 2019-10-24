@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'POST user' do
   before :each do
+    @center_1 = FactoryBot.create(:center)
     expect(User.count).to eq(0)
   end
 
@@ -9,6 +10,7 @@ describe 'POST user' do
     mutation = %(mutation {
                   createUser (
                       name: "Jake"
+                      centerId: #{@center_1.id}
                     ) {
                     user {
                       id
@@ -28,6 +30,6 @@ describe 'POST user' do
 
     expect(user[:id]).to eq(data_user.id.to_s)
     expect(user[:name]).to eq(data_user.name)
-    expect(user[:address]).to eq('Jake')
+    expect(user[:name]).to eq('Jake')
   end
 end

@@ -1,10 +1,9 @@
 module Mutations
   class CreateUserMutation < Mutations::BaseMutation
     argument :name, String, required: true
-    argument :address, String, required: true
-    argument :phone, String, required: true
-    argument :website, String, required: true
-    argument :email, String, required: true
+    argument :age, String, required: false
+    argument :phone, String, required: false
+    argument :center_id, Integer, required: true
 
     field :user, Types::UserType, null: true
     field :errors, [String], null: false
