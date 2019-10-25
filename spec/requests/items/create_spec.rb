@@ -10,6 +10,7 @@ describe 'POST item' do
     mutation = %(mutation {
                   createItem (
                       name: "food"
+                      quantity: 11
                       centerId: #{@center_1.id}
                     ) {
                     item {
@@ -31,5 +32,11 @@ describe 'POST item' do
     expect(item[:id]).to eq(data_item.id.to_s)
     expect(item[:name]).to eq(data_item.name)
     expect(item[:name]).to eq('food')
+
+    center_item = CenterItem.first
+
+    expect(center_item.quantity).to eq(11)
+    expect(center_item.center).to eq(@center_1)
+    expect(center_item.item).to eq(data_item)
   end
 end
