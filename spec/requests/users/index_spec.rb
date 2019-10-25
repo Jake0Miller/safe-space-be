@@ -50,11 +50,27 @@ describe 'GET users' do
     post '/graphql', params: query
 
     users = JSON.parse(response.body, symbolize_names: true)[:data][:usersAtCenter]
-    
+
     expect(users.length).to eq(3)
     users.each_with_index do |user,i|
       expect(user[:id]).to eq(@fe_users[i].id.to_s)
       expect(user[:name]).to eq(@fe_users[i].name)
     end
+  end
+
+  it 'I can get a user that by its id' do
+    query = { "query" => "{
+              user(id: #{@user_3.id}) {
+                id
+                name
+              }
+            }" }
+
+    post '/graphql', params: query
+
+    user = JSON.parse(response.body, symbolize_names: true)[:data][:user]
+    
+    expect(user[:id]).to eq(@user_3.id.to_s)
+    expect(user[:name]).to eq(@user_3.name)
   end
 end
