@@ -7,7 +7,7 @@ module Types
     end
 
     field :items_at_center, [Types::ItemType], null: false do
-      argument :center_id, Integer, required: false
+      argument :center_id, Integer, required: true
     end
 
     def items_at_center(center_id:)
@@ -28,8 +28,16 @@ module Types
       User.all
     end
 
+    field :user, Types::UserType, null: false do
+      argument :id, ID, required: true
+    end
+
+    def user(id:)
+      User.find(id)
+    end
+
     field :users_at_center, [Types::UserType], null: false do
-      argument :center_id, Integer, required: false
+      argument :center_id, Integer, required: true
     end
 
     def users_at_center(center_id:)
