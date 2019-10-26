@@ -10,14 +10,15 @@ describe 'DELETE user' do
 
   it 'I can create a new user' do
     mutation = %(mutation {
-                  deleteUser (
-                      id: #{@user_1.id}
-                    )
+                  deleteUser(id: #{@user_1.id}) {
+                    user {
+                      name
+                    }
                   }
                 })
 
     post '/graphql', params: { "query" => mutation }
-
+    
     expect(User.count).to eq(0)
   end
 end
