@@ -7,9 +7,5 @@ module Types
     def center
       object.center
     end
-
-    def centerId
-
-    end
   end
 end
