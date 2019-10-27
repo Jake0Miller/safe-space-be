@@ -11,6 +11,7 @@ describe 'POST item' do
                   createItem (
                       name: "food"
                       quantity: 11
+                      consumable: true
                       centerId: #{@center_1.id}
                     ) {
                     item {
