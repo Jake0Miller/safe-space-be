@@ -21,6 +21,12 @@ class Types::QueryType < Types::BaseObject
     Center.all
   end
 
+  field :needs, [Types::NeedType], null: false
+
+  def needs
+    Need.all
+  end
+
   field :users, [Types::UserType], null: false
 
   def users
