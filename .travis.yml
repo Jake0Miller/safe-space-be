@@ -1,5 +1,5 @@
 addons:
-  postgresql: 11.5
+  postgresql: '9.6'
 before_script:
   - cp config/database.yml.travis config/database.yml
 dist: trusty
