@@ -11,11 +11,13 @@ describe 'POST item' do
                   createItem (
                       name: "food"
                       quantity: 11
+                      consumable: true
                       centerId: #{@center_1.id}
                     ) {
                     item {
                       id
                       name
+                      consumable
                     }
                   }
                 })
@@ -24,13 +26,14 @@ describe 'POST item' do
 
     items = Item.all
     data_item = items.first
-
+    
     expect(items.length).to eq(1)
 
     item = JSON.parse(response.body, symbolize_names: true)[:data][:createItem][:item]
 
     expect(item[:id]).to eq(data_item.id.to_s)
     expect(item[:name]).to eq(data_item.name)
+    expect(item[:consumable]).to eq(data_item.consumable)
     expect(item[:name]).to eq('food')
 
     center_item = CenterItem.first

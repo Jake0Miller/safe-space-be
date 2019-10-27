@@ -2,6 +2,7 @@ module Types
   class ItemType < Types::BaseObject
     field :id, ID, null: false
     field :name, String, null: false
+    field :consumable, Boolean, null: false
     field :centers, [CenterType], null: false
     field :quantity, Integer, null: false
 

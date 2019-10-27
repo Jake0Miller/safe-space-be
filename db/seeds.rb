@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 if Rails.env.production? || Rails.env.development?
-  diapers = Item.create!(name: "Diapers")
-  food = Item.create!(name: "Food")
-  water = Item.create!(name: "Water")
-  soap = Item.create!(name: "Soap")
+  diapers = Item.create!(name: "Diapers", consumable: true)
+  food = Item.create!(name: "Food", consumable: true)
+  water = Item.create!(name: "Water", consumable: true)
+  soap = Item.create!(name: "Soap", consumable: true)
 
   center_1 = Center.create!({ "name": "Turing Relief Center",
                    "address": "1331,17th,St,Denver,CO,80202",

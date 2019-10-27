@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'DELETE user' do
   before :each do
     @center_1 = FactoryBot.create(:center)
-    @item_1 = Item.create(name: 'food')
+    @item_1 = Item.create(name: 'food', consumable: true)
     @center_item_1 = CenterItem.create(center: @center_1, item: @item_1)
 
     expect(Item.count).to eq(1)

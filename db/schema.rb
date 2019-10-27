@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_24_051359) do
+ActiveRecord::Schema.define(version: 2019_10_27_211937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,16 +37,36 @@ ActiveRecord::Schema.define(version: 2019_10_24_051359) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "items", force: :cascade do |t|
+  create_table "contacts", force: :cascade do |t|
     t.string "name"
+    t.string "phone"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.boolean "consumable"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "needs", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_needs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "phone"
     t.integer "age"
+    t.boolean "allergies", default: false
+    t.boolean "dietRestrictions", default: false
     t.bigint "center_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -55,5 +75,7 @@ ActiveRecord::Schema.define(version: 2019_10_24_051359) do
 
   add_foreign_key "center_items", "centers"
   add_foreign_key "center_items", "items"
+  add_foreign_key "contacts", "users"
+  add_foreign_key "needs", "users"
   add_foreign_key "users", "centers"
 end
