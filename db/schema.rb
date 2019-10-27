@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_10_27_205023) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
+    t.boolean "consumable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,6 +56,8 @@ ActiveRecord::Schema.define(version: 2019_10_27_205023) do
     t.string "name"
     t.string "phone"
     t.integer "age"
+    t.boolean "allergies", default: false
+    t.boolean "dietRestrictions", default: false
     t.bigint "center_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
