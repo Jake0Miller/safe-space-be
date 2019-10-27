@@ -5,4 +5,5 @@ class Types::MutationType < Types::BaseObject
   field :delete_user, mutation: Mutations::DeleteUserMutation
 
   field :create_item, mutation: Mutations::CreateItemMutation
+  field :edit_item, mutation: Mutations::EditItemMutation
 end
