@@ -1,6 +1,8 @@
 class Types::MutationType < Types::BaseObject
   field :create_center, mutation: Mutations::CreateCenterMutation
 
+  field :create_contact, mutation: Mutations::CreateContactMutation
+
   field :create_item, mutation: Mutations::CreateItemMutation
   field :edit_item, mutation: Mutations::EditItemMutation
 
