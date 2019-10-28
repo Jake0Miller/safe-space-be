@@ -32,7 +32,7 @@ describe 'POST contact' do
     expect(contacts.length).to eq(1)
 
     contact = JSON.parse(response.body, symbolize_names: true)[:data][:createContact][:contact]
-    
+
     expect(contact[:id]).to eq(data_contact.id.to_s)
     expect(contact[:name]).to eq(data_contact.name)
     expect(contact[:phone]).to eq(data_contact.phone)
