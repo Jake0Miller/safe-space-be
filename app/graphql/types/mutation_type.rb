@@ -10,4 +10,5 @@ class Types::MutationType < Types::BaseObject
 
   field :create_user, mutation: Mutations::CreateUserMutation
   field :delete_user, mutation: Mutations::DeleteUserMutation
+  field :edit_user, mutation: Mutations::EditUserMutation
 end
