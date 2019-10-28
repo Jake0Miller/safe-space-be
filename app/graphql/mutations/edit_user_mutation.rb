@@ -1,17 +1,18 @@
-class Mutations::CreateUserMutation < Mutations::BaseMutation
-  argument :name, String, required: true
-  argument :age, String, required: false
+class Mutations::EditUserMutation < Mutations::BaseMutation
+  argument :id, ID, required: true
+  argument :name, String, required: false
   argument :phone, String, required: false
+  argument :age, Integer, null: false
   argument :allergies, Boolean, null: false
   argument :diet_restrictions, Boolean, null: false
-  argument :center_id, Integer, required: true
 
   field :user, Types::UserType, null: true
   field :errors, [String], null: false
 
   def resolve(**attributes)
-    user = User.new(attributes)
-    if user.save
+    user = User.find_by(id: attributes[:id])
+    if user
+      user.update(attributes)
       { user: user }
     else
       { errors: user.errors.full_messages }

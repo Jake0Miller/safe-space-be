@@ -23,7 +23,7 @@ describe 'POST need' do
                 })
 
     post '/graphql', params: { "query" => mutation }
-    
+
     needs = Need.all
     data_need = needs.first
 
