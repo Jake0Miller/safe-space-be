@@ -18,6 +18,10 @@ describe 'EDIT user' do
 
     post '/graphql', params: { "query" => mutation }
 
-    # expect(@center_item_1.reload.quantity).to eq(10)
+    user = JSON.parse(response.body, symbolize_names: true)[:data][:editUser][:item]
+    
+    expect(user[:id]).to eq(@user_1.id)
+    expect(user[:name]).to eq(@user_1.name)
+    expect(user[:phone]).to eq(@user_1.phone)
   end
 end
