@@ -4,7 +4,7 @@ module Types
     field :name, String, null: false
     field :phone, String, null: false
     field :user, UserType, null: false
-    field :user_id, ID, null: false
+    field :user_id, Integer, null: false
 
     def user
       object.user
