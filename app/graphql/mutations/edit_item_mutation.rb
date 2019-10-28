@@ -1,6 +1,6 @@
 class Mutations::EditItemMutation < Mutations::BaseMutation
   argument :id, ID, required: true
-  argument :center_id, ID, required: true
+  argument :center_id, Integer, required: true
   argument :quantity, Integer, required: true
 
   field :item, Types::ItemType, null: true
