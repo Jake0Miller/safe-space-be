@@ -5,9 +5,10 @@ class Mutations::DeleteUserMutation < Mutations::BaseMutation
   field :errors, [String], null: false
 
   def resolve(**attributes)
-    user = User.delete(attributes.values)
-    if user > 0
-      { success: "User deleted successfully" }
+    user = User.find(attributes[:id])
+    if user
+      User.delete(attributes.values)
+      { user: user }
     else
       { errors: user.errors.full_messages }
     end
