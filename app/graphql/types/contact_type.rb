@@ -3,6 +3,7 @@ module Types
     field :id, ID, null: false
     field :name, String, null: false
     field :phone, String, null: false
+    field :notify, Boolean, null: false
     field :user, UserType, null: false
     field :user_id, Integer, null: false
 

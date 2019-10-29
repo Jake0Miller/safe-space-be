@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_10_27_211937) do
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "phone"
+    t.boolean "notify"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
