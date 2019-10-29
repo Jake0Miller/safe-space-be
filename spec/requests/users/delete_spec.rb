@@ -12,6 +12,7 @@ describe 'DELETE user' do
     mutation = %(mutation {
                   deleteUser(id: #{@user_1.id}) {
                     user {
+                      id
                       name
                     }
                   }
