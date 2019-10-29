@@ -18,7 +18,7 @@ class Mutations::CreateContactMutation < Mutations::BaseMutation
             body: "Hello from Ruby",
             to: "+1#{attributes[:phone]}",
             from: "+13345680005")
-        render json: 'Message sent successfully'
+        render json: "#{contact.user.name} just checked in at a relief center."
       end
       { contact: contact }
     else
