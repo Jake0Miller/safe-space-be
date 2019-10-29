@@ -13,6 +13,7 @@ describe 'POST contact' do
                   createContact (
                       name: "Ian"
                       phone: "555-555-5555"
+                      notify: false
                       userId: #{@user_1.id}
                     ) {
                     contact {
@@ -28,7 +29,7 @@ describe 'POST contact' do
 
     contacts = Contact.all
     data_contact = contacts.first
-
+    
     expect(contacts.length).to eq(1)
 
     contact = JSON.parse(response.body, symbolize_names: true)[:data][:createContact][:contact]
