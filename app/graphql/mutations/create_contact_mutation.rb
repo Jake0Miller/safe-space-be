@@ -15,10 +15,10 @@ class Mutations::CreateContactMutation < Mutations::BaseMutation
       if attributes[:notify]
         client = Twilio::REST::Client.new ENV['T_SID'], ENV['T_KEY']
         message = client.messages.create(
-            body: "Hello from Ruby",
+            body: "#{contact.user.name} just checked in at a relief center.",
             to: "+1#{attributes[:phone]}",
             from: "+13345680005")
-        render json: "#{contact.user.name} just checked in at a relief center."
+        render json: 'Message sent successfully'
       end
       { contact: contact }
     else
