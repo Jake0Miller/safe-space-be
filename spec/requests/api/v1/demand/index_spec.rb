@@ -58,7 +58,7 @@ describe 'GET /api/v1/demand' do
     get "/api/v1/demand/#{@center_1.id}"
 
     demand = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
+    
     expect(response.status).to eq(200)
     expect(demand.length).to eq(2)
     expect(demand[:consumable].length).to eq(7)
