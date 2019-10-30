@@ -11,7 +11,7 @@ if Rails.env.production? || Rails.env.development?
   water = Item.create!(name: "Water", consumable: true)
   soap = Item.create!(name: "Soap", consumable: true)
   bed = Item.create!(name: "Bed, Blanket, & Pillow", consumable: false)
-  tbrush = Item.create!(name: "Toobrush", consumable: false)
+  tbrush = Item.create!(name: "Toothbrush", consumable: false)
   tpaste = Item.create!(name: "Toothpaste", consumable: true)
   tpaper = Item.create!(name: "Toilet paper", consumable: true)
   clothes = Item.create!(name: "Clothes", consumable: false)
