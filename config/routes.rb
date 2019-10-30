@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       post '/centers', to: 'centers#create'
       get '/centers', to: 'centers#index'
       get '/items', to: 'items#index'
+      get '/demand/:id', to: 'demand#index'
     end
   end
   get '/contact', to: 'twilio#new'

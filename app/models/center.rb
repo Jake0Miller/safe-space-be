@@ -4,4 +4,5 @@ class Center < ApplicationRecord
   has_many :center_items
   has_many :items, through: :center_items
   has_many :users
+  has_many :needs, through: :users
 end
