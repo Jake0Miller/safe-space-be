@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2019_10_27_211937) do
     t.integer "age"
     t.boolean "allergies", default: false
     t.boolean "dietRestrictions", default: false
+    t.boolean "privacy", default: true
     t.bigint "center_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
