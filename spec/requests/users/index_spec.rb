@@ -6,9 +6,9 @@ describe 'GET users' do
     @center_2 = FactoryBot.create(:center)
     @user_1 = User.create(name: 'Jake', center: @center_1)
     @user_2 = User.create(name: 'Jacob', center: @center_1)
-    @user_3 = User.create(name: 'Sarah', center: @center_2)
-    @user_4 = User.create(name: 'Ann', center: @center_2)
-    @user_5 = User.create(name: 'Pam', center: @center_2)
+    @user_3 = User.create(name: 'Sarah', center: @center_2, privacy: false)
+    @user_4 = User.create(name: 'Ann', center: @center_2, privacy: false)
+    @user_5 = User.create(name: 'Pam', center: @center_2, privacy: true)
     @fe_users = [@user_3, @user_4, @user_5]
     @users = User.all
 
@@ -58,7 +58,26 @@ describe 'GET users' do
     end
   end
 
-  it 'I can get a user that by its id' do
+  it 'I can get all users that belong to a center' do
+    query = { "query" => "{
+              publicUsersAtCenter(centerId: #{@center_2.id}) {
+                id
+                name
+              }
+            }" }
+
+    post '/graphql', params: query
+
+    users = JSON.parse(response.body, symbolize_names: true)[:data][:publicUsersAtCenter]
+
+    expect(users.length).to eq(2)
+    expect(users.first[:id]).to eq(@user_3.id.to_s)
+    expect(users.first[:id]).to eq(@user_3.id.to_s)
+    expect(users.last[:name]).to eq(@user_4.name)
+    expect(users.last[:name]).to eq(@user_4.name)
+  end
+
+  it 'I can get a user by its id' do
     query = { "query" => "{
               user(id: #{@user_3.id}) {
                 id
@@ -69,7 +88,7 @@ describe 'GET users' do
     post '/graphql', params: query
 
     user = JSON.parse(response.body, symbolize_names: true)[:data][:user]
-    
+
     expect(user[:id]).to eq(@user_3.id.to_s)
     expect(user[:name]).to eq(@user_3.name)
   end
