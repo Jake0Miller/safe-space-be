@@ -206,13 +206,13 @@ and click on `New Pull Request`
 
 ## Tech Stack List
 
- - ruby
+ - ruby 2.4.1
+ - rails 5.2.3
+ - postgresql 11.5
  - twilio-ruby
  - graphql
  - fastjson
  - rack-cors
- - pry
  - faker
  - webmock
- - simplecov
  - rspec-rails
