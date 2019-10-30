@@ -7,7 +7,7 @@ class Mutations::DeleteUserMutation < Mutations::BaseMutation
   def resolve(**attributes)
     user = User.find(attributes[:id])
     if user
-      User.delete(attributes.values)
+      User.destroy(attributes.values)
       { user: user }
     else
       { errors: user.errors.full_messages }
