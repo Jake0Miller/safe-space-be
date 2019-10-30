@@ -4,6 +4,7 @@ class Types::MutationType < Types::BaseObject
   field :create_contact, mutation: Mutations::CreateContactMutation
 
   field :create_item, mutation: Mutations::CreateItemMutation
+  field :delete_item, mutation: Mutations::DeleteItemMutation
   field :edit_item, mutation: Mutations::EditItemMutation
 
   field :create_need, mutation: Mutations::CreateNeedMutation
