@@ -9,6 +9,8 @@ You can view the Github repos as well as see the app in production here:
 
 [Front end GitHub](https://github.com/ktsune/safe-space-fe)
 
+[Front end (public-facing) GitHub](https://github.com/jogren/cross-poll-ui)
+
 [Back end GitHub](https://github.com/Jake0Miller/safe-space-be)
 
 [Back end Heroku](https://safe-space-be.herokuapp.com/)
