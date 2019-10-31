@@ -60,16 +60,20 @@ describe 'GET users' do
 
   it 'I can get all users that belong to a center' do
     query = { "query" => "{
-              publicUsersAtCenter(centerId: #{@center_2.id}) {
+              publicUsers {
                 id
                 name
+                center {
+                  id
+                  addressPrint
+                }
               }
             }" }
 
     post '/graphql', params: query
-
-    users = JSON.parse(response.body, symbolize_names: true)[:data][:publicUsersAtCenter]
-
+    
+    users = JSON.parse(response.body, symbolize_names: true)[:data][:publicUsers]
+    binding.pry
     expect(users.length).to eq(2)
     expect(users.first[:id]).to eq(@user_3.id.to_s)
     expect(users.first[:id]).to eq(@user_3.id.to_s)
