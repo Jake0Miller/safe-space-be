@@ -201,7 +201,7 @@ https://github.com/Jake0Miller/safe-space-be/compare
 and click on `New Pull Request`
 
 ## Contributors
-- Jake Miller
+- [Jake Miller](https://github.com/Jake0Miller)
 
 ## Tech Stack List
 
