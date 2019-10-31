@@ -38,7 +38,11 @@ class Api::V1::DemandController < ApplicationController
     end
 
     demands[:consumable].transform_values! do |value|
-      {days_remaining: (value[:stock] / value[:need].to_f).round(0)}
+      if value[:need] != 0
+        {days_remaining: (value[:stock] / value[:need].to_f).round(0)}
+      else
+        {days_remaining: value[:stock]}
+      end
     end
 
     demands[:non_consumable].transform_values! do |value|
