@@ -15,6 +15,8 @@ You can view the Github repos as well as see the app in production here:
 
 [Front end Heroku](https://safe-space-fe.herokuapp.com/)
 
+[Front end (public-facing Heroku](https://safe-space-ui.herokuapp.com/)
+
 [Back end Heroku](https://safe-space-be.herokuapp.com/)
 
 #### You can also view the [project board here](https://github.com/ktsune/safe-space-fe/projects/1)
