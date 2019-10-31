@@ -71,9 +71,9 @@ describe 'GET users' do
             }" }
 
     post '/graphql', params: query
-    
+
     users = JSON.parse(response.body, symbolize_names: true)[:data][:publicUsers]
-    binding.pry
+    
     expect(users.length).to eq(2)
     expect(users.first[:id]).to eq(@user_3.id.to_s)
     expect(users.first[:id]).to eq(@user_3.id.to_s)
