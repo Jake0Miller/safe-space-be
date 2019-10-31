@@ -41,11 +41,14 @@ if Rails.env.production? || Rails.env.development?
                  "lat": "39.7341653",
                  "lng": "-104.9869956" })
 
-  user_1 = User.create(name: 'Jake', center: center_1)
-  user_2 = User.create(name: 'Jacob', center: center_1)
-  user_3 = User.create(name: 'Sarah', center: center_2)
-  user_4 = User.create(name: 'Ann', center: center_2)
-  user_5 = User.create(name: 'Pam', center: center_2)
+  user_1 = User.create(name: 'Jake', center: center_1, privacy: false)
+  user_2 = User.create(name: 'Jacob', center: center_1, privacy: false)
+  user_3 = User.create(name: 'Sarah', center: center_2, privacy: false)
+  user_4 = User.create(name: 'Ann', center: center_2, privacy: false)
+  user_5 = User.create(name: 'Pam', center: center_2, privacy: false)
+  User.create(name: 'Dayton Gross', center: center_3, privacy: false)
+  User.create(name: 'Marisol Howe', center: center_3, privacy: false)
+  User.create(name: 'Anastasia Rojas', center: center_3, privacy: false)
 
   Center.all.each do |center|
     Item.all.each do |item|
