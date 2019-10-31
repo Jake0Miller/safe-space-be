@@ -55,11 +55,9 @@ class Types::QueryType < Types::BaseObject
     User.where(center_id: center_id)
   end
 
-  field :public_users_at_center, [Types::UserType], null: false do
-    argument :center_id, Integer, required: true
-  end
+  field :public_users, [Types::UserType], null: false
 
-  def public_users_at_center(center_id:)
-    User.where(center_id: center_id).where(privacy: false)
+  def public_users
+    User.where(privacy: false)
   end
 end
