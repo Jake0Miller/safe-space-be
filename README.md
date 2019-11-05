@@ -208,6 +208,7 @@ and click on `New Pull Request`
 
 ## Contributors
 - [Jake Miller](https://github.com/Jake0Miller)
+- [Jacob Ogren](https://github.com/jogren)
 
 ## Tech Stack List
 
